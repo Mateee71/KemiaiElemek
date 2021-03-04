@@ -27,6 +27,21 @@ public class Kemia {
         System.out.println("Elemek szám: " + elemdb);
 
         
+        //5.feladat
+        Scanner bekeres = new Scanner(System.in);
+        List<String> beirtElemek = new ArrayList<>();
+        int N = elemek.size();
+        boolean talalt = true;
+        while (talalt) {
+            System.out.print("5.feladat Kérek egy vegyjelet: ");
+            String vegyjel = bekeres.nextLine();
+            if (vegyjel.length() <= 2 && vegyjel.length() >= 1 && vegyjel.matches(".*[a-z].*")) {
+                beirtElemek.add(vegyjel);
+            }else{
+                talalt = false;
+            }
+        }
+        
 
     }
 }
