@@ -34,6 +34,28 @@ public class Kemia {
         System.out.println(maxEv + " év volt a leghosszabb időszak két elem felfedezése között.");
         
         
+        System.out.println("8. feladat: Statisztika");
+        HashMap<String, Integer> felfedezettElemek = new HashMap<>();
+        for (Elem elem : elemek) {
+            if (!(elem.getEv().equals("Ókor"))) {
+                String kulcs = elem.getEv();
+                if (!felfedezettElemek.containsKey(kulcs)) {
+                    felfedezettElemek.put(kulcs, 1);
+                }else{
+                    int ertek = felfedezettElemek.get(kulcs);
+                    felfedezettElemek.put(kulcs, ++ertek);
+                }
+            }
+            
+        }
+        
+        for (Map.Entry<String, Integer> entry : felfedezettElemek.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            if (value > 3) {
+                System.out.println("\t"+key + ": " + value + "db");
+            }
+        }
         
         
         
